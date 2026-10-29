@@ -15,9 +15,9 @@ ROAST & ROOT is a modern, responsive coffee shop website designed to create a wa
  Our Story: Shares the brand's passion for quality coffee and meaningful everyday moments.
 
  ## SCREENSHOTS
- ![Coffee-shop](coffee-shop-image-1)
- ![Coffee-shop](coffee-shop-image-2)
- ![Coffee-shop](coffee-shop-image-3)
-![Coffee-shop](coffee-shop-image-4)
-![Coffee-shop](coffee-shop-image-5)
+ ![Coffee-shop](coffee-shop-image-1.jpeg)
+ ![Coffee-shop](coffee-shop-image-2.jpeg)
+ ![Coffee-shop](coffee-shop-image-3.jpeg)
+![Coffee-shop](coffee-shop-image-4.jpeg)
+![Coffee-shop](coffee-shop-image-5.jpeg)
 
