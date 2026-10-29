@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee-Website</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="navbar-header">
+        <nav class="navbar" aria-label="Main Navigation">
+            <!-- Logo -->
+            <a href="#" class="nav-logo">ROAST &amp; ROOT</a>
+
+            <!-- Desktop Links & Mobile Menu Wrap -->
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#menu" class="nav-link">Menu</a></li>
+                    <li><a href="#story" class="nav-link">Our Story</a></li>
+                    <li><a href="#menu" class="nav-link">Our Coffee</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <!-- Mobile CTA Button Inside Drawer -->
+                <a href="#contact" class="btn-cta btn-mobile-only">Order Online</a>
+            </div>
+
+            <!-- Desktop CTA Button -->
+            <a href="#contact" class="btn-cta btn-desktop-only">Order Online</a>
+
+            <!-- Hamburger Button (Mobile) -->
+            <button class="hamburger-toggle" id="hamburgerToggle" aria-label="Toggle Navigation Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="hero-subtitle">YOUR DAILY RITUAL, REIMAGINED</span>
+                <h1 class="hero-title">A Better Day Starts with Better Coffee.</h1>
+                <p class="hero-description">
+                    Freshly brewed, thoughtfully sourced, and roasted to bring out every beautiful note. Find your new
+                    favourite cup at Roast &amp; Root.
+                </p>
+                <div class="hero-actions">
+                    <a href="#menu" class="btn-primary">Explore Our Menu <span class="arrow">↗</span></a>
+                    <a href="#story" class="btn-secondary">Our Story</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why choose us -->
+    <section class="why-choose-us">
+        <div class="container">
+
+            <!-- Section Header -->
+            <div class="section-header">
+                <span class="section-subtitle">Why Choose Us?</span>
+                <h2 class="section-title">Coffee Worth Coming Back For.</h2>
+            </div>
+
+            <!-- 4-Column Feature Grid -->
+            <div class="features-grid">
+
+                <!-- Feature 1: Quality Beans -->
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z" />
+                            <path d="M12 2c-3.5 4-3.5 16 0 20" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Quality Beans</h3>
+                    <p class="feature-desc">
+                        We choose quality beans to bring rich flavour and a better cup to your everyday routine.
+                    </p>
+                </div>
+
+                <!-- Feature 2: Freshly Roasted -->
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2v4M8 4v2M16 4v2" />
+                            <path d="M6 9h12a2 2 0 0 1 2 2v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4v-6a2 2 0 0 1 2-2z" />
+                            <path d="M18 11h2a2 2 0 0 1 2 2v0a2 2 0 0 1-2 2h-2" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Freshly Roasted</h3>
+                    <p class="feature-desc">
+                        Our coffee is prepared with care, so every cup tastes fresh and full of character.
+                    </p>
+                </div>
+
+                <!-- Feature 3: Made with Care -->
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Made with Care</h3>
+                    <p class="feature-desc">
+                        Every drink is crafted with attention to detail, from the first shot to the final pour.
+                    </p>
+                </div>
+
+                <!-- Feature 4: A Cozy Space -->
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                            <polyline points="9 22 9 12 15 12 15 22" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">A Cozy Space</h3>
+                    <p class="feature-desc">
+                        A welcoming place to catch up with friends, study, or simply slow down.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR STROY -->
+    <section class="our-story-section" id="story">
+        <div class="container story-container">
+
+            <!-- Left Side: Image Wrapper -->
+            <div class="story-image-wrapper">
+                <img src="assets\gallery-image-1.jpeg" alt="Roast & Root Coffee Experience" class="story-img">
+            </div>
+
+            <!-- Right Side: Content -->
+            <div class="story-content">
+                <span class="section-subtitle">OUR STORY</span>
+                <h2 class="section-title">More Than Just Coffee.</h2>
+
+                <div class="story-text">
+                    <p>
+                        At Roast &amp; Root, we believe good coffee is about more than what's in your cup. It's about
+                        the little moments that make an ordinary day feel special.
+                    </p>
+                    <p>
+                        From carefully selected beans to freshly prepared drinks, we bring together quality, comfort,
+                        and a genuine love for coffee. Whether you're stopping by for your morning espresso or spending
+                        a slow afternoon with friends, there's always a seat waiting for you.
+                    </p>
+                </div>
+
+                <div class="story-action">
+                    <a href="#about" class="btn-primary">Discover Our Story</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Featured DRINKS -->
+    <section class="featured-drinks-section" id="menu">
+        <div class="container">
+
+            <!-- Section Header -->
+            <div class="section-header">
+                <span class="section-subtitle">Signature Coffee Menu</span>
+                <h2 class="section-title">Made for Your Kind of Coffee Day.</h2>
+                <p class="section-desc">
+                    From your first morning espresso to a slow afternoon iced latte, there's a cup for every moment.
+                </p>
+            </div>
+
+            <!-- Drinks Grid (Total 8 Items) -->
+            <div class="drinks-grid" id="drinksGrid">
+
+                <!-- Item 1 -->
+                <div class="drink-card">
+                    <div class="drink-img-wrapper">
+                        <img src="assets\Caramel Cold Coffee.jpeg" alt="Iced Vanilla Latte" class="drink-img">
+                    </div>
+                    <div class="drink-content">
+                        <h3 class="drink-title">Iced Vanilla Latte</h3>
+                        <p class="drink-desc">Smooth espresso, chilled milk, and a hint of vanilla. Your favourite kind
+                            of cool.</p>
+                        <div class="drink-footer">
+                            <span class="drink-price">Rs. 650</span>
+                            <a href="#order" class="btn-order">Order <span class="arrow">↗</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="drink-card">
+                    <div class="drink-img-wrapper">
+                        <img src="assets\Caramel Iced Latte.jpeg" alt="Classic Cappuccino" class="drink-img">
+                    </div>
+                    <div class="drink-content">
+                        <h3 class="drink-title">Classic Cappuccino</h3>
+                        <p class="drink-desc">Rich espresso, silky milk, and a soft layer of foam in every sip.</p>
+                        <div class="drink-footer">
+                            <span class="drink-price">Rs. 550</span>
+                            <a href="#order" class="btn-order">Order <span class="arrow">↗</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="drink-card">
+                    <div class="drink-img-wrapper">
+                        <img src="assets\Classic Cappuccino.jpeg" alt="Double Espresso" class="drink-img">
+                    </div>
+                    <div class="drink-content">
+                        <h3 class="drink-title">Double Espresso</h3>
+                        <p class="drink-desc">Bold, balanced, and full of character. For those who love coffee
+                            unfiltered.</p>
+                        <div class="drink-footer">
+                            <span class="drink-price">Rs. 400</span>
+                            <a href="#order" class="btn-order">Order <span class="arrow">↗</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="drink-card">
+                    <div class="drink-img-wrapper">
+                        <img src="assets\Double Espresso.jpeg" alt="Caramel Cold Coffee" class="drink-img">
+                    </div>
+                    <div class="drink-content">
+                        <h3 class="drink-title">Caramel Cold Coffee</h3>
+                        <p class="drink-desc">Creamy, chilled coffee with buttery caramel sweetness and a smooth finish.
+                        </p>
+                        <div class="drink-footer">
+                            <span class="drink-price">Rs. 700</span>
+                            <a href="#order" class="btn-order">Order <span class="arrow">↗</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 5 (Initially Hidden) -->
+                <div class="drink-card hidden-item">
+                    <div class="drink-img-wrapper">
+                        <img src="assets\Iced Vanilla Latte.jpeg" alt="Caramel Iced Latte" class="drink-img">
+                    </div>
+                    <div class="drink-content">
+                        <h3 class="drink-title">Caramel Iced Latte</h3>
+                        <p class="drink-desc">Cold, creamy, and finished with a touch of caramel.</p>
+                        <div class="drink-footer">
+                            <span class="drink-price">Rs. 650</span>
+                            <a href="#order" class="btn-order">Order <span class="arrow">↗</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 6 (Initially Hidden) -->
+                <div class="drink-card hidden-item">
+                    <div class="drink-img-wrapper">
+                        <img src="assets\Matcha Latte.jpeg" alt="Slow-Brew Cold Coffee" class="drink-img">
+                    </div>
+                    <div class="drink-content">
+                        <h3 class="drink-title">Slow-Brew Cold Coffee</h3>
+                        <p class="drink-desc">Deep, refreshing coffee with a smooth, mellow finish.</p>
+                        <div class="drink-footer">
+                            <span class="drink-price">Rs. 550</span>
+                            <a href="#order" class="btn-order">Order <span class="arrow">↗</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 7 (Initially Hidden) -->
+                <div class="drink-card hidden-item">
+                    <div class="drink-img-wrapper">
+                        <img src="assets\Slow-Brew Cold Coffee.jpeg" alt="Matcha Latte" class="drink-img">
+                    </div>
+                    <div class="drink-content">
+                        <h3 class="drink-title">Matcha Latte</h3>
+                        <p class="drink-desc">A creamy, earthy alternative for a different kind of coffee break.</p>
+                        <div class="drink-footer">
+                            <span class="drink-price">Rs. 600</span>
+                            <a href="#order" class="btn-order">Order <span class="arrow">↗</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 8 (Initially Hidden) -->
+                <div class="drink-card hidden-item">
+                    <div class="drink-img-wrapper">
+                        <img src="assets\Turmeric Latte.jpeg" alt="Mocha Latte" class="drink-img">
+                    </div>
+                    <div class="drink-content">
+                        <h3 class="drink-title">Mocha Latte</h3>
+                        <p class="drink-desc">A delicious blend of espresso, steamed milk, and rich chocolate, topped
+                            with whipped cream.</p>
+                        <div class="drink-footer">
+                            <span class="drink-price">Rs. 680</span>
+                            <a href="#order" class="btn-order">Order <span class="arrow">↗</span></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- View Full Menu Button -->
+            <div class="menu-action-container">
+                <button id="viewMenuBtn" class="btn-view-more">View Full Menu</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- OUR GALLERY -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+
+            <!-- Section Header -->
+            <div class="section-header">
+                <span class="section-subtitle">Café Ambience</span>
+                <h2 class="section-title">A Place for Every Moment.</h2>
+                <p class="section-desc">
+                    Whether it's a quick coffee before work, a catch-up with friends, or a quiet corner to get things
+                    done, Roast &amp; Root makes room for your everyday moments.
+                </p>
+            </div>
+
+            <!-- Gallery Bento Grid (Balanced 10 Pictures) -->
+            <div class="gallery-grid">
+
+                <!-- Item 1: Featured Large (Spans 2 cols, 2 rows) -->
+                <div class="gallery-item item-large">
+                    <img src="assets/gallery-image-2.jpeg" alt="Café Main Counter Ambience" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <span>Main Barista Counter</span>
+                    </div>
+                </div>
+
+                <!-- Item 2: Standard (1x1) -->
+                <div class="gallery-item">
+                    <img src="assets/gallery-image-3.jpeg" alt="Artisanal Espresso Pour" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <span>Artisanal Pour</span>
+                    </div>
+                </div>
+
+                <!-- Item 3: Tall Vertical (Spans 1 col, 2 rows) -->
+                <div class="gallery-item item-tall">
+                    <img src="assets/gallery-image-4.jpeg" alt="Cozy Window Seating Corner" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <span>Window Seating</span>
+                    </div>
+                </div>
+
+                <!-- Item 4: Standard (1x1) -->
+                <div class="gallery-item">
+                    <img src="assets/gallery-image-5.jpeg" alt="Fresh Baked Pastries" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <span>Fresh Pastries</span>
+                    </div>
+                </div>
+
+                <!-- Item 5: Standard (1x1) -->
+                <div class="gallery-item">
+                    <img src="assets/gallery-image-7.jpeg" alt="Coffee Bean Roaster" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <span>In-House Roasting</span>
+                    </div>
+                </div>
+
+                <!-- Item 6: Wide Horizontal (Spans 2 cols, 1 row) -->
+                <div class="gallery-item item-wide">
+                    <img src="assets/gallery-image-6.jpeg" alt="Friends Gathering Table" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <span>Community Table</span>
+                    </div>
+                </div>
+
+                <!-- Item 7: Standard (1x1) -->
+                <div class="gallery-item">
+                    <img src="assets/gallery-image-8.jpeg" alt="Quiet Work Nook" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <span>Work Nook</span>
+                    </div>
+                </div>
+
+                <!-- Item 8: Standard (1x1) -->
+                <div class="gallery-item">
+                    <img src="assets/gallery-image-9.jpeg" alt="Latte Art Close Up" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <span>Latte Art</span>
+                    </div>
+                </div>
+
+                <!-- Item 9: Wide Horizontal (Spans 2 cols, 1 row) -->
+                <div class="gallery-item item-wide">
+                    <img src="assets/gallery-image-1.jpeg" alt="Outdoor Patio Seating" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <span>Outdoor Patio</span>
+                    </div>
+                </div>
+
+                <!-- Item 10: New Added Standard (1x1) -->
+                <div class="gallery-item">
+                    <img src="assets/gallery-image-11.jpeg" alt="Evening Coffee Vibe" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <span>Evening Vibe</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Testominals -->
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="container">
+
+            <!-- Section Header -->
+            <div class="section-header">
+                <span class="section-subtitle">Customer Reviews</span>
+                <h2 class="section-title">Loved by Our Community.</h2>
+                <p class="section-desc">
+                    Hear what our regular guests have to say about their daily coffee experience at Roast &amp; Root.
+                </p>
+            </div>
+
+            <!-- Testimonials Grid (3 Cards) -->
+            <div class="testimonials-grid">
+
+                <!-- Review 1 -->
+                <div class="testimonial-card">
+                    <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        “The coffee is smooth, the atmosphere is lovely, and it's become my favourite place to take a
+                        break.”
+                    </p>
+                    <div class="testimonial-author">
+                        <span class="author-name">— Ayesha K.</span>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="testimonial-card">
+                    <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        “A cozy spot, friendly service, and a really good iced latte. Definitely coming back.”
+                    </p>
+                    <div class="testimonial-author">
+                        <span class="author-name">— Hamza R.</span>
+                    </div>
+                </div>
+
+                <!-- Review 3 (Extra Added) -->
+                <div class="testimonial-card">
+                    <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        “The aroma as you walk in is magical. Their cappuccino and pastries are absolute perfection!”
+                    </p>
+                    <div class="testimonial-author">
+                        <span class="author-name">— Zainab M.</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer class="footer-section" id="contact">
+        <div class="container footer-container">
+
+            <!-- Column 1: Brand Info -->
+            <div class="footer-col brand-col">
+                <a href="#" class="footer-logo">ROAST &amp; ROOT.</a>
+                <p class="footer-tagline">Good Coffee. Grounded in Craft.</p>
+            </div>
+
+            <!-- Column 2: Explore Links -->
+            <div class="footer-col">
+                <h3 class="footer-heading">Explore</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#story">Our Story</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Visit Us (Address & Hours) -->
+            <div class="footer-col">
+                <h3 class="footer-heading">Visit Us</h3>
+                <p class="footer-text">123 Artisan Street, Coffee District, City</p>
+                <p class="footer-text hours">Mon – Sun: 8:00 AM – 10:00 PM</p>
+            </div>
+
+            <!-- Column 4: Contact & Follow -->
+            <div class="footer-col">
+                <h3 class="footer-heading">Contact</h3>
+                <p class="footer-text">+92 300 1234567</p>
+                <p class="footer-text email">hello@roastandroot.com</p>
+
+                <h3 class="footer-heading social-heading">Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" target="_blank" rel="noopener">Instagram</a>
+                    <span class="dot">·</span>
+                    <a href="#" target="_blank" rel="noopener">Facebook</a>
+                    <span class="dot">·</span>
+                    <a href="#" target="_blank" rel="noopener">TikTok</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom Copyright Bar -->
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Roast &amp; Root. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1274 @@
+/* CSS VARIABLES: Typography & Color Palette */
+:root {
+  /* Colors */
+  --color-espresso-black: #24170F;
+  --color-roasted-brown:  #3A251D;
+  --color-caramel:        #C59A6B;
+  --color-coffee-cream:   #F5F0E7;
+  --color-pure-white:     #FFFFFF;
+
+  /* Typography */
+  --font-heading: 'DM Serif Display', Georgia, serif;
+  --font-body:    'Manrope', system-ui, -apple-system, sans-serif;
+}
+
+/* Base Resets */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-coffee-cream);
+  color: var(--color-espresso-black);
+}
+
+/*NAVBAR STYLES */
+.navbar-header {
+  background-color: var(--color-espresso-black);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(58, 37, 29, 0.08); /* Subtle border */
+}
+
+.navbar {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1.25rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.nav-logo {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: var(--color-coffee-cream);
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: opacity 0.2s ease;
+}
+
+.nav-logo:hover {
+  opacity: 0.85;
+}
+
+/* Navigation Menu & Links */
+.nav-menu {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2.25rem;
+}
+
+.nav-link {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-pure-white);
+  text-decoration: none;
+  position: relative;
+  padding: 0.25rem 0;
+  transition: color 0.25s ease;
+}
+
+/* Hover & Active State Indicator (Caramel Color Accent) */
+
+.nav-link.active {
+  color: var(--color-pure-white);
+}
+
+.nav-link:hover{
+    color: var(--color-caramel)
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--color-caramel);
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Solid Dark Brown CTA Button */
+.btn-cta {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color:var(--color-espresso-black);
+  background-color: var(--color-coffee-cream);
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.15s ease;
+}
+
+.btn-cta:hover {
+  transform: translateY(-1px);
+  background-color: var(--color-caramel);
+  color: var(--color-pure-white);
+}
+
+.btn-cta:active {
+  transform: translateY(0);
+}
+
+/* Desktop vs Mobile Button Displays */
+.btn-mobile-only {
+  display: none;
+}
+
+/* Hamburger Toggle Button */
+.hamburger-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40px;
+  height: 35px;
+}
+
+.hamburger-toggle .bar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-coffee-cream);
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hamburger Animation when Active */
+.hamburger-toggle.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-toggle.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/*RESPONSIVE MEDIA QUERIES */
+
+/* Tablet Optimization (769px to 1024px) */
+@media screen and (max-width: 1024px) {
+  .nav-links {
+    gap: 1.5rem;
+  }
+}
+
+/* Mobile Screens (Under 768px) */
+@media screen and (max-width: 768px) {
+  .btn-desktop-only {
+    display: none;
+  }
+
+  .btn-mobile-only {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+
+  .hamburger-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-espresso-black);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem 2rem 2rem;
+    box-shadow: 0 10px 15px -3px rgba(36, 23, 15, 0.08);
+    display: none; /* Hidden by default */
+  }
+
+  .nav-menu.active {
+    display: flex; /* Displayed when hamburger is clicked */
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 1.25rem;
+  }
+
+  .nav-link {
+    font-size: 1.1rem;
+    display: block;
+  }
+
+  .nav-link::after {
+    display: none; /* Hide indicator line on mobile for clean look */
+  }
+}
+
+
+/* HERO SECTION STYLES */
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - 80px); /* Screen minus navbar height */
+  background-image: url('assets/hero-section.jpeg'); /* Apni coffee background image ka path yahan dein */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  padding: 4rem 2rem;
+}
+
+/* Dark Overlay taake text parha ja sake background image ke upar */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg, 
+    rgba(36, 23, 15, 0.85) 0%, 
+    rgba(36, 23, 15, 0.55) 50%, 
+    rgba(36, 23, 15, 0.2) 100%
+  );
+  z-index: 1;
+}
+
+/* Container */
+.hero-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Content on Left Side */
+.hero-content {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+/* Subtitle */
+.hero-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--color-caramel);
+  text-transform: uppercase;
+}
+
+/* Main Heading */
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 4.5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--color-pure-white);
+}
+
+/* Description */
+.hero-description {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-coffee-cream);
+  opacity: 0.9;
+}
+
+/* Action Buttons Wrapper */
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* Primary Button (Caramel Solid Accent) */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-caramel);
+  color: var(--color-espresso-black);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 0.85rem 1.75rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.25s ease, transform 0.15s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-pure-white);
+  transform: translateY(-2px);
+}
+
+.btn-primary .arrow {
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+/* Secondary Button (Outline Style) */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  background-color: transparent;
+  color: var(--color-pure-white);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.85rem 1.75rem;
+  border-radius: 6px;
+  border: 1px solid rgba(245, 240, 231, 0.4);
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-pure-white);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* RESPONSIVE DESIGN (Mobile & Tablets) */
+@media screen and (max-width: 768px) {
+  .hero-section {
+    padding: 3rem 1.25rem;
+    text-align: left;
+  }
+  
+  .hero-overlay {
+    background: rgba(36, 23, 15, 0.82); /* Darker solid background for mobile readability */
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+/* WHY CHOOSE US SECTION*/
+.why-choose-us {
+  background-color: var(--color-coffee-cream);
+  padding: 5rem 2rem;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Section Header Styles */
+.section-header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 3.5rem auto;
+}
+
+.section-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-caramel);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 400;
+  color: var(--color-espresso-black);
+  line-height: 1.2;
+}
+
+/* 4-Column Layout Grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+/* Feature Cards */
+.feature-card {
+  background-color: var(--color-pure-white);
+  padding: 2.5rem 1.75rem;
+  border-radius: 12px;
+  border: 1px solid rgba(58, 37, 29, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px -5px rgba(36, 23, 15, 0.08);
+  border-color: var(--color-roasted-brown);
+  border-width: 2px;
+  
+}
+
+/* Icon Container & SVGs */
+.feature-icon-wrapper {
+  width: 54px;
+  height: 54px;
+  background-color: rgba(197, 154, 107, 0.12); /* Subtle caramel background tint */
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.feature-icon {
+  width: 26px;
+  height: 26px;
+  stroke: var(--color-roasted-brown);
+}
+
+/* Feature Card Typography */
+.feature-title {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--color-roasted-brown);
+  margin-bottom: 0.75rem;
+}
+
+.feature-desc {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--color-espresso-black);
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+/* RESPONSIVE DESIGN (Tablets & Mobile) */
+
+/* Tablet (2 columns) */
+@media screen and (max-width: 1024px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* Mobile Screens (1 column stacked) */
+@media screen and (max-width: 640px) {
+  .why-choose-us {
+    padding: 3.5rem 1.25rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+}
+
+
+/* OUR STORY SECTION (Dark Background, Left Image, Right Text) */
+.our-story-section {
+  background-color: var(--color-espresso-black);
+  padding: 6rem 2rem;
+  color: var(--color-coffee-cream);
+}
+
+.story-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* Left Side Image Styling */
+.story-image-wrapper {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.3);
+}
+
+.story-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.story-image-wrapper:hover .story-img {
+  transform: scale(1.03);
+}
+
+/* Right Side Content Styling */
+.story-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.our-story-section .section-subtitle {
+  color: var(--color-caramel);
+  margin-bottom: 0.75rem;
+}
+
+.our-story-section .section-title {
+  color: var(--color-pure-white);
+  font-size: clamp(2.25rem, 3.5vw, 3rem);
+  margin-bottom: 1.5rem;
+}
+
+.story-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.story-text p {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--color-coffee-cream);
+  opacity: 0.9;
+}
+
+/* Button override for dark background contrast */
+.story-action .btn-primary {
+  background-color: var(--color-caramel);
+  color: var(--color-espresso-black);
+}
+
+.story-action .btn-primary:hover {
+  background-color: var(--color-pure-white);
+}
+
+/* RESPONSIVE DESIGN (Tablets & Mobile) */
+
+/* Tablet View (Stacked layout or adjusted grid) */
+@media screen and (max-width: 1024px) {
+  .story-container {
+    gap: 2.5rem;
+  }
+}
+
+/* Mobile View (Single Column Stack) */
+@media screen and (max-width: 768px) {
+  .our-story-section {
+    padding: 4rem 1.25rem;
+  }
+
+  .story-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .story-image-wrapper {
+    min-height: 300px;
+  }
+  
+  .story-action {
+    width: 100%;
+  }
+
+  .story-action .btn-primary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+/* FEATURED DRINKS / SIGNATURE MENU SECTION*/
+.featured-drinks-section {
+  background-color: var(--color-coffee-cream);
+  padding: 6rem 2rem;
+}
+
+.featured-drinks-section .section-header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 3.5rem auto;
+}
+
+.featured-drinks-section .section-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-caramel);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.featured-drinks-section .section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 400;
+  color: var(--color-espresso-black);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.section-desc {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-roasted-brown);
+  opacity: 0.85;
+  line-height: 1.6;
+}
+
+/* 2-Column Grid Layout */
+.drinks-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto 3rem auto;
+}
+
+/* Individual Drink Card */
+.drink-card {
+  background-color: var(--color-pure-white);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(58, 37, 29, 0.06);
+  display: flex;
+  flex-direction: row;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.drink-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px -5px rgba(36, 23, 15, 0.08);
+}
+
+/* Hidden state for items 5 through 8 */
+.drink-card.hidden-item {
+  display: none;
+}
+
+/* Drink Image */
+.drink-img-wrapper {
+  width: 40%;
+  min-height: 180px;
+  background-color: #eee;
+}
+
+.drink-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Drink Content Area */
+.drink-content {
+  width: 60%;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.drink-title {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: var(--color-roasted-brown);
+  margin-bottom: 0.5rem;
+}
+
+.drink-desc {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-espresso-black);
+  opacity: 0.8;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+/* Price and Order Button footer */
+.drink-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(58, 37, 29, 0.06);
+  padding-top: 0.75rem;
+}
+
+.drink-price {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-roasted-brown);
+}
+
+.btn-order {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-espresso-black);
+  background-color: var(--color-caramel);
+  padding: 0.4rem 0.9rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.btn-order:hover {
+  background-color: var(--color-roasted-brown);
+  color: var(--color-pure-white);
+}
+
+.btn-order .arrow {
+  font-weight: 400;
+}
+
+/* View Full Menu Button Container */
+.menu-action-container {
+  text-align: center;
+}
+
+.btn-view-more {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  background-color: var(--color-roasted-brown);
+  color: var(--color-pure-white);
+  padding: 0.9rem 2.5rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.15s ease;
+}
+
+.btn-view-more:hover {
+  background-color: var(--color-espresso-black);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+  .drinks-grid {
+    grid-template-columns: 1fr; /* Single column on mobile */
+  }
+  
+  .featured-drinks-section {
+    padding: 4rem 1.25rem;
+  }
+}
+
+
+/* FEATURED DRINKS / SIGNATURE MENU SECTION */
+/* ==========================================================================
+   REDESIGNED GALLERY BENTO GRID
+   ========================================================================== */
+.gallery-section {
+  background-color: var(--color-caramel);
+  padding: 6rem 2rem;
+}
+
+.gallery-section .section-header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 3.5rem auto;
+}
+
+.gallery-section .section-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-coffee-cream);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.gallery-section .section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 400;
+  color: var(--color-espresso-black);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+/* 4-Column Precise Grid Alignment */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 220px;
+  gap: 1.25rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Base Card Styling */
+.gallery-item {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: var(--color-roasted-brown);
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+/* ==========================================================================
+   SPAN VARIATIONS (No Empty Gaps Design)
+   ========================================================================== */
+
+/* 1. Hero Showcase (2x2 Box) - Heavy Visual Anchor */
+.gallery-item.item-hero {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+/* 2. Vertical Tall (1x2 Box) - Portrait Focus */
+.gallery-item.item-portrait {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+/* 3. Horizontal Wide (2x1 Box) - Landscape Focus */
+.gallery-item.item-wide {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+/* 4. Regular Square (1x1 Box) */
+.gallery-item.item-square {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+/* Hover Overlay Styles */
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to top, 
+    rgba(36, 23, 15, 0.8) 0%, 
+    rgba(36, 23, 15, 0) 50%
+  );
+  display: flex;
+  align-items: flex-end;
+  padding: 1.25rem;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.gallery-overlay span {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-pure-white);
+  transform: translateY(8px);
+  transition: transform 0.35s ease;
+}
+
+.gallery-item:hover .gallery-img {
+  transform: scale(1.05);
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-item:hover .gallery-overlay span {
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT ENGINE
+   ========================================================================== */
+
+/* Tablet View (2-Column Grid) */
+@media screen and (max-width: 1024px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 200px;
+    gap: 1rem;
+  }
+
+  /* Reset spans for 2-column consistency */
+  .gallery-item.item-hero {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+  
+  .gallery-item.item-portrait {
+    grid-column: span 1;
+    grid-row: span 2;
+  }
+
+  .gallery-item.item-wide {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  .gallery-item.item-square {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}
+
+/* Mobile Screens (Clean 1-Column Feed) */
+@media screen and (max-width: 640px) {
+  .gallery-section {
+    padding: 4rem 1.25rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 240px;
+    gap: 1rem;
+  }
+
+  /* Convert all items to single blocks on mobile */
+  .gallery-item.item-hero,
+  .gallery-item.item-portrait,
+  .gallery-item.item-wide,
+  .gallery-item.item-square {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .gallery-overlay {
+    opacity: 1; /* Keep captions visible on mobile touch */
+  }
+
+  .gallery-overlay span {
+    transform: translateY(0);
+  }
+}
+
+
+
+/* ==========================================================================
+   TESTIMONIALS SECTION STYLES
+   ========================================================================== */
+.testimonials-section {
+  background-color: var(--color-coffee-cream);
+  padding: 6rem 2rem;
+}
+
+.testimonials-section .section-header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 3.5rem auto;
+}
+
+.testimonials-section .section-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-caramel);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.testimonials-section .section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 400;
+  color: var(--color-espresso-black);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+/* 3-Column Grid Layout */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Testimonial Card */
+.testimonial-card {
+  background-color: var(--color-pure-white);
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(58, 37, 29, 0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px -5px rgba(36, 23, 15, 0.08);
+}
+
+/* Stars Rating */
+.stars {
+  color: #D4A373; /* Warm gold/caramel tone for stars */
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.25rem;
+}
+
+/* Review Quote Text */
+.testimonial-text {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--color-espresso-black);
+  opacity: 0.9;
+  margin-bottom: 2rem;
+}
+
+/* Author Info */
+.testimonial-author {
+  border-top: 1px solid rgba(58, 37, 29, 0.06);
+  padding-top: 1rem;
+}
+
+.author-name {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-roasted-brown);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (Tablets & Mobile)
+   ========================================================================== */
+
+/* Tablet View (2 Columns) */
+@media screen and (max-width: 1024px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* Mobile View (Single Column Stack) */
+@media screen and (max-width: 640px) {
+  .testimonials-section {
+    padding: 4rem 1.25rem;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+/* ==========================================================================
+   FOOTER SECTION STYLES
+   ========================================================================== */
+.footer-section {
+  background-color: var(--color-espresso-black);
+  color: var(--color-coffee-cream);
+  padding-top: 5rem;
+  border-top: 1px solid rgba(245, 240, 231, 0.1);
+}
+
+.footer-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem 4rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+}
+
+/* Footer Logo & Tagline */
+.footer-logo {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: var(--color-pure-white);
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  display: inline-block;
+  margin-bottom: 0.75rem;
+}
+
+.footer-tagline {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--color-coffee-cream);
+  opacity: 0.8;
+  line-height: 1.5;
+}
+
+/* Footer Headings */
+.footer-heading {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--color-pure-white);
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.02em;
+}
+
+.footer-heading.social-heading {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Footer Links & Text */
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-links li a,
+.social-links a {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--color-coffee-cream);
+  opacity: 0.8;
+  text-decoration: none;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.footer-links li a:hover,
+.social-links a:hover {
+  color: var(--color-caramel);
+  opacity: 1;
+}
+
+.footer-text {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--color-coffee-cream);
+  opacity: 0.8;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.footer-text.hours {
+  margin-top: 0.75rem;
+}
+
+/* Social Media Links Inline */
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.social-links .dot {
+  color: var(--color-caramel);
+  opacity: 0.6;
+}
+
+/* Copyright Bottom Bar */
+.footer-bottom {
+  border-top: 1px solid rgba(245, 240, 231, 0.08);
+  padding: 1.5rem 2rem;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--color-coffee-cream);
+  opacity: 0.6;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (Tablets & Mobile)
+   ========================================================================== */
+
+/* Tablet View (2 Columns) */
+@media screen and (max-width: 1024px) {
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+/* Mobile View (1 Column Stack) */
+@media screen and (max-width: 640px) {
+  .footer-section {
+    padding-top: 4rem;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 0 1.25rem 3rem 1.25rem;
+  }
+}
